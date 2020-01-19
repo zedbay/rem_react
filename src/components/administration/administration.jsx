@@ -1,7 +1,9 @@
 import './administration.scss';
 import React from 'react';
-import UserAdministration from './user/user-administration';
+import UserAdministration from './user/user-listing';
 import GroupAdministration from './group/group-administration'
+import UserEdit from './user/user-edit';
+import AdministrationNav from './administration-nav';
 
 import {
   BrowserRouter as Router,
@@ -13,18 +15,12 @@ class Administration extends React.Component {
   render() {
     return (
       <div className="administration-container container">
-        <h1>Administration</h1>
-        <ul className="nav">
-          <li className="nav-item">
-            <a className="nav-link" href="/administration/user">User</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="/administration/group">Group</a>
-          </li>
-        </ul>
         <Router>
+          <AdministrationNav />
           <Route path="/administration/user" exact component={UserAdministration} />
           <Route path="/administration/group" component={GroupAdministration} />
+          <Route path="/administration/user/new" component={UserEdit} />
+          <Route path="/administration/user/edit/:id" component={UserEdit} />
         </Router>
       </div>
     )
