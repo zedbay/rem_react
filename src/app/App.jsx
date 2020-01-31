@@ -1,9 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import './App.scss';
-import Login from '../login/login';
-import Administration from '../administration/administration';
-
+import './styles/design-system.scss';
+import Login from './components/login/login';
+import Administration from './components/administration/administration';
 
 class App extends React.Component {
 
@@ -17,7 +16,6 @@ class App extends React.Component {
       </div>
     )
   }
-
 
 }
 

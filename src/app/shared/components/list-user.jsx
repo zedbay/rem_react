@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 import { useHistory } from 'react-router-dom';
-import { getDate } from '../../../util/date-util';
+import { getDate } from '../../util/date-util';
 
 function ListUser(props) {
   let history = useHistory();
@@ -13,7 +13,7 @@ function ListUser(props) {
           <tr>
             <th scope="col">Email</th>
             <th scope="col">First name</th>
-            <th scope="col">name</th>
+            <th scope="col">Name</th>
             <th scope="col">Creation date</th>
             <th></th>
           </tr>

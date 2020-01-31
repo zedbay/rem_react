@@ -3,10 +3,8 @@ import { CrudService } from './crud-service';
 
 class UserCrudService extends CrudService {
 
-  endpoint = 'user';
-
   constructor() {
-    super(UserCrudService.endpoint);
+    super('user');
   }
 
   getUserGroups(id) {

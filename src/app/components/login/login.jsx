@@ -1,6 +1,5 @@
-import './login.scss';
 import React from 'react';
-import network from '../../service/network-service';
+import AuthenticationService from '../../service/authentication-service';
 
 class Login extends React.Component {
 
@@ -12,12 +11,14 @@ class Login extends React.Component {
     }
   }
 
-  onLogin = (event) => {
+  onLogin(event) {
     event.preventDefault();
-    network.post('login', this.state).then((res) => {
-      localStorage.removeItem('token');
-      localStorage.setItem('token', res.data.token);
-      this.props.history.push('/administration');
+    AuthenticationService.login(this.state.email, this.state.password, (success) => {
+      if (success) {
+        this.props.history.push('/administration');
+      } else {
+        console.log('wrong identifiant');
+      }
     });
   }
 

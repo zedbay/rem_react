@@ -12,7 +12,7 @@ class GroupForm extends React.Component {
   render() {
     return (
       <form onSubmit={(event) => this.props.onSearchGroup(event, this.state)}>
-        <div className="container search-row row">
+        <div className="container stack-search-bar row">
           <div className="col-4 input-group mb-3">
             <div className="input-group-prepend">
               <span className="input-group-text">Name</span>

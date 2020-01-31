@@ -1,5 +1,5 @@
 import React from 'react';
-import ListUser from '../shared/list-user';
+import ListUser from '../../../shared/components/list-user';
 import UserForm from './user-form';
 import UserCrudService from '../../../service/crud/user-crud-service';
 

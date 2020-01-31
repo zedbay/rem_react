@@ -1,6 +1,6 @@
 import React from 'react';
-import * as Grouputil from '../../../service/crud/group';
-import ListUser from '../shared/list-user';
+import ListUser from '../../../shared/components/list-user';
+import GroupCrudService from '../../../service/crud/group-crud-service';
 
 class GroupEdit extends React.Component {
 
@@ -19,7 +19,7 @@ class GroupEdit extends React.Component {
   }
 
   fetchCurrentGroup(id) {
-    Grouputil.getGroup(id).then((group) => {
+    GroupCrudService.get(id).then((group) => {
       group = group.data.group;
       this.setState({
         name: group.name,
@@ -29,7 +29,7 @@ class GroupEdit extends React.Component {
   }
 
   fetchMemberShip(id) {
-    Grouputil.getMembership(id).then((users) => {
+    GroupCrudService.getMembership(id).then((users) => {
       this.setState({
         users: users.data.users
       });
@@ -39,7 +39,7 @@ class GroupEdit extends React.Component {
   onSubmit(event) {
     event.preventDefault();
     if (this.state.creationMode) {
-      Grouputil.createGroup({
+      GroupCrudService.create({
         name: this.state.name
       }).then(() => {
         this.props.history.push('/administration/group');

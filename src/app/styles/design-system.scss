@@ -1,0 +1,23 @@
+.stack-search-bar {
+  margin-top: 8px;
+  align-items: baseline;
+}
+
+
+.stack-page {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  max-height: 100vh;
+  min-height: 100%;
+  overflow: hidden;
+
+  .stack-header {
+    flex-grow: 0;
+  }
+
+  .stack-body {
+    flex-grow: 1;
+    overflow: scroll;
+  }
+}

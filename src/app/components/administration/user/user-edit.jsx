@@ -1,5 +1,5 @@
 import React from 'react';
-import ListGroup from '../shared/list-group';
+import ListGroup from '../../../shared/components/list-group';
 import UserService from '../../../service/crud/user-crud-service';
 import { getDate } from '../../../util/date-util';
 

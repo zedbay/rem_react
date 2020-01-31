@@ -1,6 +1,6 @@
 import React from 'react';
 import Network from '../../../service/network-service';
-import ListGroup from '../shared/list-group';
+import ListGroup from '../../../shared/components/list-group';
 import GroupForm from './group-form';
 
 class GroupListing extends React.Component {
