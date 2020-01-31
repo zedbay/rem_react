@@ -10,6 +10,9 @@ function AdministrationNav() {
       <Nav className="mr-auto">
         <Nav.Link onClick={() => history.push('/administration/user')}> User</Nav.Link>
         <Nav.Link onClick={() => history.push('/administration/group')}>Group</Nav.Link>
+        <Nav.Link onClick={() => history.push('/administration/product')}>Product</Nav.Link>
+        <Nav.Link onClick={() => history.push('/administration/order')}>Order</Nav.Link>
+        <Nav.Link onClick={() => history.push('/administration/message')}>Message</Nav.Link>
       </Nav>
     </Navbar>
   )

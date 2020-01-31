@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-class Network {
+class NetworkService {
 
   static target = "http://localhost:8080";
 
@@ -25,4 +25,4 @@ class Network {
 
 }
 
-export default Network;
+export default NetworkService;

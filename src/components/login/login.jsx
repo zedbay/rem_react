@@ -1,6 +1,6 @@
 import './login.scss';
 import React from 'react';
-import network from '../../utils/network';
+import network from '../../service/network-service';
 
 class Login extends React.Component {
 
