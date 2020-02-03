@@ -1,27 +1,25 @@
 import React from 'react';
-import Network from '../../../service/network-service';
 import ListGroup from '../../../shared/components/list-group';
 import GroupForm from './group-form';
+import GroupCrudService from '../../../service/crud/group-crud-service';
 
 class GroupListing extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      groups: [],
-      groupsToDisplay: []
-    }
-    Network.get('group').then((res) => {
+    this.state = { dataIsFetched: false };
+    GroupCrudService.list().then((res) => {
       this.setState({
         groups: res.data.groups,
-        groupsToDisplay: res.data.groups
-      });
-    })
+        groupsToDisplay: res.data.groups,
+        dataIsFetched: true
+      })
+    });
   }
 
   deleteGroup(event, groupId) {
     event.stopPropagation();
-    Network.delete(`group/${groupId}`).then(() => {
+    GroupCrudService.delete(groupId).then(() => {
       this.setState({
         groups: this.state.groups.filter((group) => group._id !== groupId),
         groupsToDisplay: this.state.groupsToDisplay.filter((group) => group._id !== groupId)
@@ -37,6 +35,7 @@ class GroupListing extends React.Component {
   }
 
   render() {
+    if (!this.state.dataIsFetched) return null;
     return (
       <div>
         <GroupForm onSearchGroup={(event, body) => this.searchGroup(event, body)} />

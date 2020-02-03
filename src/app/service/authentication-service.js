@@ -9,7 +9,7 @@ class AuthenticationService {
         localStorage.setItem('token', res.data.token);
         callback(true);
       })
-      .catch((err) => {
+      .catch(() => {
         callback(false);
       });
   }
