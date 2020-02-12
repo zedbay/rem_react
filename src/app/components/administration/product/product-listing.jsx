@@ -31,7 +31,6 @@ class ProductListing extends React.Component {
 
   searchProduct(event, body) {
     event.preventDefault();
-    console.log(body);
     this.setState({
       productsToDisplay: this.state.products.filter((product) => product.name.includes(body.name))
     });
@@ -43,6 +42,10 @@ class ProductListing extends React.Component {
       <div>
         <ProductForm onSearchProduct={(event, body) => this.searchProduct(event, body)} />
         <ListProduct products={this.state.productsToDisplay} onProductDeleted={(event, productId) => { this.deleteProduct(event, productId) }} />
+        <button
+          type="button"
+          className="col-2 btn btn-primary"
+          onClick={() => this.props.history.push('/administration/product/new')}>Create product</button>
       </div>
     )
   }

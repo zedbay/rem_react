@@ -12,6 +12,10 @@ class NetworkService {
     return axios.get(`${this.target}/${endPoint}`, this.getConfig());
   }
 
+  static put(endPoint, body) {
+    return axios.put(`${this.target}/${endPoint}`, body, this.getConfig());
+  }
+
   static delete(endPoint) {
     return axios.delete(`${this.target}/${endPoint}`, this.getConfig());
   }

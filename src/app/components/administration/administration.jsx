@@ -4,6 +4,7 @@ import GroupListing from './group/group-listing'
 import UserEdit from './user/user-edit';
 import AdministrationNav from './administration-nav';
 import GroupEdit from './group/group-edit';
+import ProductEdit from './product/product-edit';
 
 import {
   BrowserRouter as Router,
@@ -32,6 +33,8 @@ class Administration extends React.Component {
             <Route path="/administration/user/new" exact component={UserEdit} />
             <Route path="/administration/user/edit/:id" component={UserEdit} />
             <Route path="/administration/product" exact component={ProductListing} />
+            <Route path="/administration/product/new" exact component={ProductEdit} />
+            <Route path="/administration/product/edit/:id" exact component={ProductEdit} />
           </div>
         </Router>
       </div>
